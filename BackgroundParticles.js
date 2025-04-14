@@ -62,14 +62,43 @@ const projectDivs = document.querySelectorAll(".project-div");
 
 projectDivs.forEach(div => {
     div.addEventListener("mouseenter", () => {
-        mainSection.style.backgroundColor = "rgb(14, 24, 46)"; // Cinza
+        mainSection.style.backgroundColor = "rgb(14, 24, 46)";
         div.style.backgroundColor = "";
     });
 
     div.addEventListener("mouseleave", () => {
-        mainSection.style.backgroundColor = ""; // Retorna ao original
+        mainSection.style.backgroundColor = ""; 
     });
 });
+
+document.addEventListener("scroll", () => {
+  const scrollPosition = window.scrollY;
+
+  const divA = document.querySelector(".div-a");
+  const divB = document.querySelector(".div-b");
+  const divC = document.querySelector(".div-c");
+
+  if (scrollPosition < 300) {
+      divA.classList.add("hover-active");
+      divB.classList.remove("hover-active");
+      divC.classList.remove("hover-active");
+  } else if (scrollPosition >= 300 && scrollPosition < 1000) {
+      divA.classList.remove("hover-active");
+      divB.classList.add("hover-active");
+      divC.classList.remove("hover-active");
+  } else {
+      divA.classList.remove("hover-active");
+      divB.classList.remove("hover-active");
+      divC.classList.add("hover-active");  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const divA = document.querySelector(".div-a");
+  divA.classList.add("hover-active");
+});
+
+
+
 
 
 draw();
