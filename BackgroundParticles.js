@@ -28,7 +28,7 @@ function draw() {
       ctx.beginPath();
       ctx.moveTo(point.x, point.y);
       ctx.lineTo(closest.point.x, closest.point.y);
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)';
+      ctx.strokeStyle = 'rgb(1, 238, 255)';
       ctx.stroke();
     });
 
